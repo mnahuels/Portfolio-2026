@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio | Desarrollador Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">MiPortfolio</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Botón para alternar Modo Oscuro -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Cambiar modo oscuro">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display: none;">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Inicio (Hero) -->
+        <section id="inicio" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Hola, soy <span class="highlight">Nahuel Salto</span></h1>
+                    <p>Alumno Avanzado de Ingenieria en Sistemas de Informacion</p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">Ver mis trabajos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Espacio para foto de perfil -->
+                    <div class="image-placeholder profile-placeholder">
+                        <p>[Tu Foto de Perfil]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre mí -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2>Sobre mí</h2>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p>"Soy estudiante de la Universidad Tecnológica Nacional - Facultad Regional Concepción del
+                            Uruguay (UTN FRCU),
+                            cursando actualmente el cuarto año y algunas materias correspondientes al quinto año de la
+                            carrera.
+                            Tengo proyectado realizar mi tesis final en el año 2027. En la actualidad me dedico
+                            íntegramente
+                            a mis estudios académicos, pero me encuentro en la búsqueda activa de mi primera experiencia
+                            profesional. Mi objetivo es complementar mi formación, aplicar los conocimientos adquiridos
+                            y
+                            adentrarme en las dinámicas reales del mundo laboral en el área tecnológica."</p>
+                    </div>
+                    <div class="about-gallery">
+                        <!-- Espacio para fotos personales y de la facultad -->
+                        <div class="image-placeholder gallery-item">
+                            <p>[Foto Personal 1]</p>
+                        </div>
+                        <div class="image-placeholder gallery-item">
+                            <p>[Foto Personal 2]</p>
+                        </div>
+                        <div class="image-placeholder gallery-item">
+                            <p>[Foto de la UTN FRCU]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades -->
+        <section id="habilidades" class="section bg-light">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">HTML5</div>
+                    <div class="skill-card">CSS3</div>
+                    <div class="skill-card">JavaScript</div>
+                    <div class="skill-card">Git & GitHub</div>
+                    <div class="skill-card">Diseño Responsivo</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <h2>Mis Proyectos</h2>
+                <div class="projects-grid">
+                    <!-- Proyecto 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <!-- Espacio para imagen del proyecto -->
+                            <span>Imagen del Proyecto</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Proyecto Uno</h3>
+                            <p>Descripción breve de este proyecto increíble y las tecnologías que usaste para
+                                construirlo.</p>
+                            <a href="#" class="btn btn-small">Ver en GitHub</a>
+                        </div>
+                    </article>
+                    <!-- Proyecto 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <span>Imagen del Proyecto</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Proyecto Dos</h3>
+                            <p>Descripción breve de este proyecto increíble y las tecnologías que usaste para
+                                construirlo.</p>
+                            <a href="#" class="btn btn-small">Ver en GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section bg-light">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>¿Tienes un proyecto en mente o quieres saludar? ¡Escríbeme!</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Correo" required>
+                    <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Nahuel Salto.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
