@@ -70,4 +70,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Optional: Auto-play slider (uncomment if desired)
     // setInterval(nextSlide, 5000);
+
+    // ---- Scroll Animations ----
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: stop observing once animated
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.scroll-animate, .scroll-animate-bar');
+    animateElements.forEach(el => observer.observe(el));
+
+    // ---- Welcome Modal Logic ----
+    const welcomeModal = document.getElementById('welcome-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+
+    if (welcomeModal && closeModalBtn) {
+        // Show modal after a short delay for a smooth entrance
+        setTimeout(() => {
+            welcomeModal.classList.add('show');
+        }, 800);
+
+        closeModalBtn.addEventListener('click', () => {
+            welcomeModal.classList.remove('show');
+        });
+    }
 });

@@ -12,7 +12,24 @@
 </head>
 
 <body>
-
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>¡Bienvenido a mi Portfolio! 👋</h3>
+            <p>Es un gusto tenerte por aquí. Explora mis proyectos y conoce más sobre mi trayectoria.</p>
+            <div class="easter-egg-hint">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p><strong>Aviso:</strong> Esta página contiene un <em>easter egg</em> interactivo. ¡Trata de
+                    encontrarlo!</p>
+            </div>
+            <button id="close-modal" class="btn btn-primary">¡Entendido!</button>
+        </div>
+    </div>
     <header class="navbar">
         <div class="nav-container">
             <a href="#inicio" class="logo">MiPortfolio</a>
@@ -54,28 +71,31 @@
         <section id="inicio" class="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>Hola, soy <span class="highlight">Nahuel Salto</span></h1>
-                    <p>Alumno Avanzado de Ingenieria en Sistemas de Informacion</p>
+                    <h1>Hola, soy <span class="highlight">Mauricio Nahuel Salto</span></h1>
+                    <p>Alumno Avanzado de Ingenieria en Sistemas de Información</p>
+                    <p>¡Bienvenido a mi Portfolio!</p>
                     <div class="hero-buttons">
                         <a href="#proyectos" class="btn btn-primary">Ver mis trabajos</a>
                         <a href="#contacto" class="btn btn-secondary">Contáctame</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <!-- Espacio para foto de perfil -->
-                    <div class="image-placeholder profile-placeholder">
-                        <p>[Tu Foto de Perfil]</p>
-                    </div>
+                    <img src="img/IMG_1.jpg" alt="Foto de perfil de Nahuel Salto" class="profile-img">
                 </div>
             </div>
         </section>
 
+        <!-- Separador animado -->
+        <div class="divider-container">
+            <div class="section-divider scroll-animate-bar"></div>
+        </div>
+
         <!-- Sección Sobre mí -->
         <section id="sobre-mi" class="section">
             <div class="container">
-                <h2>Sobre mí</h2>
+                <h2 class="scroll-animate">Sobre mí</h2>
                 <div class="about-grid">
-                    <div class="about-content">
+                    <div class="about-content scroll-animate" style="transition-delay: 0.2s;">
                         <p>"Soy estudiante de la Universidad Tecnológica Nacional - Facultad Regional Concepción del
                             Uruguay (UTN FRCU),
                             cursando actualmente el cuarto año y algunas materias correspondientes al quinto año de la
@@ -87,7 +107,7 @@
                             y
                             adentrarme en las dinámicas reales del mundo laboral en el área tecnológica."</p>
                     </div>
-                    <div class="about-gallery">
+                    <div class="about-gallery scroll-animate" style="transition-delay: 0.4s;">
                         <!-- Espacio para fotos personales y de la facultad -->
                         <div class="image-placeholder gallery-item">
                             <p>[Foto Personal 1]</p>
