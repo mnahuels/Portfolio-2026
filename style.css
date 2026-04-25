@@ -688,28 +688,135 @@ body.dark-mode .modal-content {
     transform: translateY(0);
 }
 
-/* Media Queries basicos */
+/* ===========================
+   RESPONSIVE PARA CELULAR
+   =========================== */
+
+/* Tablet: hasta 992px */
 @media (max-width: 992px) {
     .skills-detail-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .about-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
 }
 
+/* Mobile: hasta 768px */
 @media (max-width: 768px) {
-    .skills-detail-grid {
-        grid-template-columns: 1fr;
+
+    /* --- Hero --- */
+    .hero {
+        min-height: auto;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
     }
 
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-content, .hero-image {
+        padding: 1.5rem;
+        margin-left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .profile-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* --- Navbar --- */
     .nav-links {
         display: none;
     }
+
+    /* --- About Me --- */
+    .about-quote {
+        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-quote p {
+        font-size: 1rem;
+    }
+
+    .quote-mark {
+        font-size: 3.5rem;
+    }
+
+    .about-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .interests-pills {
+        gap: 0.5rem;
+    }
+
+    /* --- Habilidades --- */
+    .skills-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-actions {
+        margin-top: 1.5rem;
+    }
+
+    /* --- Secciones generales --- */
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
 }
+
+/* Mobile pequeño: hasta 480px */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .photo-slide {
+        width: 200px;
+        height: 155px;
+    }
+
+    .pill {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.9rem;
+    }
+}
+
 
 /* ---- Carrusel de Fotos Infinito ---- */
 .photo-carousel-section {
