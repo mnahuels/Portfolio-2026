@@ -105,4 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
             welcomeModal.classList.remove('show');
         });
     }
+    // ---- Skills Show More Logic ----
+    const btnVerMasSkills = document.getElementById('btn-ver-mas-skills');
+    const hiddenSkills = document.querySelectorAll('.hidden-skill');
+    
+    if (btnVerMasSkills) {
+        btnVerMasSkills.addEventListener('click', () => {
+            hiddenSkills.forEach(skill => {
+                skill.classList.remove('hidden-skill');
+                // Observe the newly revealed elements for scroll animation
+                observer.observe(skill);
+            });
+            // Hide the button after revealing all skills
+            btnVerMasSkills.style.display = 'none';
+        });
+    }
 });
