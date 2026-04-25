@@ -66,6 +66,10 @@ h2 {
     padding: 5rem 0;
 }
 
+.section-pb-sm {
+    padding-bottom: 1.5rem;
+}
+
 .bg-light {
     background-color: var(--bg-light);
 }
@@ -705,4 +709,69 @@ body.dark-mode .modal-content {
     .nav-links {
         display: none;
     }
+}
+
+/* ---- Carrusel de Fotos Infinito ---- */
+.photo-carousel-section {
+    padding: 0 0 3rem 0;
+    overflow: hidden;
+}
+
+.photo-track-wrapper {
+    width: 100%;
+    overflow: hidden;
+    /* Fade suave en los bordes */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+.photo-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scroll-photos 30s linear infinite;
+}
+
+.photo-track:hover {
+    animation-play-state: paused;
+}
+
+.photo-slide {
+    flex-shrink: 0;
+    width: 260px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid rgba(186, 230, 253, 0.5);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-slide:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
+}
+
+.photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes scroll-photos {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
