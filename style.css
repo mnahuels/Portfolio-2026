@@ -512,15 +512,48 @@ body.dark-mode .pill {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
     display: flex;
     flex-direction: column;
 }
 
 .skill-detail-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: scale(1.04) translateY(-4px);
+    box-shadow:
+        0 12px 28px -4px rgba(99, 102, 241, 0.25),
+        0 0 0 3px rgba(99, 102, 241, 0.18);
     border-color: var(--primary-color);
+    background: #ffffff;
+    animation: skill-wiggle 0.5s ease forwards;
+}
+
+@keyframes skill-wiggle {
+    0% {
+        transform: scale(1.04) translateY(-4px) rotate(0deg);
+    }
+
+    20% {
+        transform: scale(1.04) translateY(-4px) rotate(-1.2deg);
+    }
+
+    40% {
+        transform: scale(1.04) translateY(-4px) rotate(1.2deg);
+    }
+
+    60% {
+        transform: scale(1.04) translateY(-4px) rotate(-0.8deg);
+    }
+
+    80% {
+        transform: scale(1.04) translateY(-4px) rotate(0.5deg);
+    }
+
+    100% {
+        transform: scale(1.04) translateY(-4px) rotate(0deg);
+    }
 }
 
 .skill-icon {
@@ -737,7 +770,8 @@ body.dark-mode .modal-content {
         flex-wrap: wrap;
     }
 
-    .hero-content, .hero-image {
+    .hero-content,
+    .hero-image {
         padding: 1.5rem;
         margin-left: 0;
         width: 100%;
@@ -828,20 +862,16 @@ body.dark-mode .modal-content {
     width: 100%;
     overflow: hidden;
     /* Fade suave en los bordes */
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-    );
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 10%,
-        black 90%,
-        transparent 100%
-    );
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
 }
 
 .photo-track {
@@ -879,6 +909,11 @@ body.dark-mode .modal-content {
 }
 
 @keyframes scroll-photos {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
