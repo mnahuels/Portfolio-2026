@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const moonIcon = document.getElementById('moon-icon');
     const sunIcon = document.getElementById('sun-icon');
-    
+
     // Check local storage for theme
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         let theme = 'light';
-        
+
         if (document.body.classList.contains('dark-mode')) {
             theme = 'dark';
             moonIcon.style.display = 'none';
@@ -33,14 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prev-slide');
     const nextBtn = document.getElementById('next-slide');
     const dots = document.querySelectorAll('.dot');
-    
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
     function updateSlider() {
         // Move the wrapper
         sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
+
         // Update dots
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentSlide].classList.add('active');
@@ -68,9 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Auto-play slider (uncomment if desired)
-    // setInterval(nextSlide, 5000);
-
     // ---- Scroll Animations ----
     const observerOptions = {
         root: null,
@@ -82,8 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: stop observing once animated
-                // observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal');
 
     if (welcomeModal && closeModalBtn) {
-        // Show modal after a short delay for a smooth entrance
         setTimeout(() => {
             welcomeModal.classList.add('show');
         }, 800);
@@ -105,19 +99,75 @@ document.addEventListener('DOMContentLoaded', () => {
             welcomeModal.classList.remove('show');
         });
     }
-    // ---- Skills Show More Logic ----
+    // ---- Mostrar mas / menos habilidades ----
     const btnVerMasSkills = document.getElementById('btn-ver-mas-skills');
-    const hiddenSkills = document.querySelectorAll('.hidden-skill');
-    
-    if (btnVerMasSkills) {
+    const btnVerMenosSkills = document.getElementById('btn-ver-menos-skills');
+    const hiddenSkills = Array.from(document.querySelectorAll('.hidden-skill'));
+    const PASO_MAS = 6;
+    const PASO_MENOS = 3;
+    let visiblesActuales = 0;
+
+    if (btnVerMasSkills && btnVerMenosSkills && hiddenSkills.length > 0) {
+
+        // --- Ver MÁS: muestra de a 6 ---
         btnVerMasSkills.addEventListener('click', () => {
-            hiddenSkills.forEach(skill => {
-                skill.classList.remove('hidden-skill');
-                // Observe the newly revealed elements for scroll animation
+            const siguiente = Math.min(visiblesActuales + PASO_MAS, hiddenSkills.length);
+            const lote = hiddenSkills.slice(visiblesActuales, siguiente);
+
+            lote.forEach(skill => {
+                skill.style.display = 'flex';
                 observer.observe(skill);
             });
-            // Hide the button after revealing all skills
-            btnVerMasSkills.style.display = 'none';
+
+            visiblesActuales = siguiente;
+
+            // Mostrar "Ver menos" en cuanto haya al menos 1 skill expandido
+            btnVerMenosSkills.style.display = 'inline-flex';
+
+            // Ocultar "Ver más" solo si ya no quedan más por mostrar
+            if (visiblesActuales >= hiddenSkills.length) {
+                btnVerMasSkills.style.display = 'none';
+            }
+        });
+
+        // --- Ver MENOS: oculta de a 3 con animación de fade-out ---
+        btnVerMenosSkills.addEventListener('click', () => {
+            const inicio = Math.max(visiblesActuales - PASO_MENOS, 0);
+            const lote = hiddenSkills.slice(inicio, visiblesActuales);
+
+            // Aplicar fade-out animado
+            lote.forEach(skill => {
+                skill.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                skill.style.opacity = '0';
+                skill.style.transform = 'translateY(20px)';
+            });
+
+            // Después de la animación, ocultar de verdad
+            setTimeout(() => {
+                lote.forEach(skill => {
+                    skill.style.display = 'none';
+                    skill.classList.remove('visible');
+                    skill.style.opacity = '';
+                    skill.style.transform = '';
+                    skill.style.transition = '';
+                });
+
+                visiblesActuales = inicio;
+
+                // Restaurar "Ver más" si estaba oculto
+                btnVerMasSkills.style.display = 'inline-flex';
+
+                // Si ya no quedan skills expandidos, ocultar "Ver menos" y hacer scroll suave
+                if (visiblesActuales <= 0) {
+                    btnVerMenosSkills.style.display = 'none';
+
+                    // Scroll suave al inicio de habilidades
+                    const seccionHabilidades = document.getElementById('habilidades');
+                    if (seccionHabilidades) {
+                        seccionHabilidades.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }, 370);
         });
     }
 });
