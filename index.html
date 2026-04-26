@@ -24,7 +24,7 @@
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
-                <p><strong>Aviso:</strong> Esta página contiene un <em>easter egg</em> interactivo. ¡Trata de
+                <p><strong>Aviso:</strong> Esta página contiene un <em>easter egg</em> (En Desarrollo) ¡Trata de
                     encontrarlo!</p>
             </div>
             <button id="close-modal" class="btn btn-primary">¡Entendido!</button>
@@ -38,8 +38,8 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-mi">Sobre mí</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#educacion">Educación</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#educacion">Educación</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -376,64 +376,129 @@
             </div>
         </section>
 
-        <!-- Separador animado: Habilidades → Educación -->
+        <!-- Separador animado: Habilidades → Proyectos -->
         <div class="char-divider-wrap bg-celeste">
             <div class="char-divider-bar scroll-animate-bar">
                 <img src="img/IMG_26.png" alt="Cloud" class="char-divider-img">
             </div>
         </div>
 
-        <!-- Sección Educación y Tecnologías -->
-        <section id="educacion" class="section bg-celeste">
+        <!-- Sección Proyectos (Slider) -->
+        <section id="proyectos" class="section bg-celeste">
             <div class="container">
-                <h2>Educación y Tecnologías Aprendidas</h2>
-                <div class="slider-container">
-                    <div class="slider-wrapper" id="edu-slider">
-                        <!-- Slide 1 -->
+                <h2 class="scroll-animate">Mis Proyectos</h2>
+                <div class="slider-container projects-slider-container">
+                    <div class="slider-wrapper" id="proj-slider">
+
+                        <!-- Proyecto 1: Portfolio Web -->
                         <div class="slide">
-                            <div class="slide-content">
-                                <div class="slide-image">
-                                    <div class="image-placeholder"><span>[Foto UTN]</span></div>
+                            <div class="project-slide-content">
+                                <div class="project-slide-image">
+                                    <div class="proj-img-wrap">
+                                        <div class="proj-img-placeholder">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                                <path d="M3 9h18" />
+                                                <path d="M9 21V9" />
+                                            </svg>
+                                        </div>
+                                        <div class="proj-tags">
+                                            <span class="proj-tag">HTML</span>
+                                            <span class="proj-tag">CSS</span>
+                                            <span class="proj-tag">JavaScript</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="slide-text">
-                                    <h3>Ingeniería en Sistemas de Información</h3>
-                                    <p>Estudiante avanzado en la UTN FRCU. Formación sólida en desarrollo de software,
-                                        arquitectura de sistemas y bases de datos.</p>
+                                <div class="project-slide-text">
+                                    <div class="proj-number">01</div>
+                                    <h3>Portfolio Personal</h3>
+                                    <p>Sitio web personal desarrollado desde cero con HTML, CSS y JavaScript puro.
+                                        Incluye modo oscuro, animaciones de scroll, carrusel de fotos, slider de
+                                        proyectos y Easter egg interactivo.</p>
+                                    <div class="project-slide-links">
+                                        <a href="#" class="btn btn-primary btn-small">Ver en GitHub</a>
+                                        <a href="#" class="btn btn-secondary btn-small">Ver demo</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide 2 -->
+
+                        <!-- Proyecto 2: Agente IA con N8N -->
                         <div class="slide">
-                            <div class="slide-content">
-                                <div class="slide-image">
-                                    <div class="image-placeholder"><span>[Foto HTML/CSS/JS]</span></div>
+                            <div class="project-slide-content">
+                                <div class="project-slide-image">
+                                    <div class="proj-img-wrap">
+                                        <div class="proj-img-placeholder">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z" />
+                                                <path d="M12 8v4l3 3" />
+                                            </svg>
+                                        </div>
+                                        <div class="proj-tags">
+                                            <span class="proj-tag">N8N</span>
+                                            <span class="proj-tag">OpenAI</span>
+                                            <span class="proj-tag">Pinecone</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="slide-text">
-                                    <h3>Desarrollo Frontend</h3>
-                                    <p>Conocimientos avanzados en HTML5, CSS3 y JavaScript moderno para crear interfaces
-                                        interactivas y responsivas.</p>
+                                <div class="project-slide-text">
+                                    <div class="proj-number">02</div>
+                                    <h3>Agente IA con N8N</h3>
+                                    <p>Automatización de flujos de trabajo inteligentes usando N8N con integración de
+                                        OpenAI y Pinecone para búsqueda semántica y respuestas contextuales basadas en
+                                        documentos propios.</p>
+                                    <div class="project-slide-links">
+                                        <a href="#" class="btn btn-primary btn-small">Ver en GitHub</a>
+                                        <a href="#" class="btn btn-secondary btn-small">Ver demo</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Slide 3 -->
+
+                        <!-- Proyecto 3: LLM Local con Ollama -->
                         <div class="slide">
-                            <div class="slide-content">
-                                <div class="slide-image">
-                                    <div class="image-placeholder"><span>[Foto Git]</span></div>
+                            <div class="project-slide-content">
+                                <div class="project-slide-image">
+                                    <div class="proj-img-wrap">
+                                        <div class="proj-img-placeholder">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <path d="M8 21h8M12 17v4" />
+                                            </svg>
+                                        </div>
+                                        <div class="proj-tags">
+                                            <span class="proj-tag">Ollama</span>
+                                            <span class="proj-tag">Python</span>
+                                            <span class="proj-tag">Docker</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="slide-text">
-                                    <h3>Control de Versiones y Git</h3>
-                                    <p>Manejo de repositorios, control de versiones y trabajo colaborativo utilizando
-                                        Git y GitHub.</p>
+                                <div class="project-slide-text">
+                                    <div class="proj-number">03</div>
+                                    <h3>LLM Local con Ollama</h3>
+                                    <p>Implementación y configuración de modelos de lenguaje locales con Ollama. Incluye
+                                        personalización de modelos y despliegue en contenedores Docker para entornos
+                                        aislados.</p>
+                                    <div class="project-slide-links">
+                                        <a href="#" class="btn btn-primary btn-small">Ver en GitHub</a>
+                                        <a href="#" class="btn btn-secondary btn-small">Ver demo</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!-- Controles del Slider -->
-                    <button class="slider-btn prev-btn" id="prev-slide" aria-label="Anterior">&#10094;</button>
-                    <button class="slider-btn next-btn" id="next-slide" aria-label="Siguiente">&#10095;</button>
+                    <button class="slider-btn prev-btn" id="proj-prev" aria-label="Proyecto anterior">&#10094;</button>
+                    <button class="slider-btn next-btn" id="proj-next" aria-label="Proyecto siguiente">&#10095;</button>
                     <!-- Indicadores -->
-                    <div class="slider-dots">
+                    <div class="slider-dots" id="proj-dots">
                         <span class="dot active" data-slide="0"></span>
                         <span class="dot" data-slide="1"></span>
                         <span class="dot" data-slide="2"></span>
@@ -442,36 +507,93 @@
             </div>
         </section>
 
-        <!-- Sección Proyectos -->
-        <section id="proyectos" class="section bg-celeste">
+        <!-- Separador animado: Proyectos → Educación -->
+        <div class="divider-container bg-light" style="padding-top: 0;">
+            <div class="section-divider scroll-animate-bar"></div>
+        </div>
+
+        <!-- Sección Educación -->
+        <section id="educacion" class="section bg-light">
             <div class="container">
-                <h2>Mis Proyectos</h2>
-                <div class="projects-grid">
-                    <!-- Proyecto 1 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <!-- Espacio para imagen del proyecto -->
-                            <span>Imagen del Proyecto</span>
+                <h2 class="scroll-animate">Educación</h2>
+                <div class="edu-timeline">
+
+                    <!-- Item 1: UTN -->
+                    <div class="edu-item scroll-animate">
+                        <div class="edu-icon-col">
+                            <div class="edu-icon">🎓</div>
+                            <div class="edu-line"></div>
                         </div>
-                        <div class="project-info">
-                            <h3>Proyecto Uno</h3>
-                            <p>Descripción breve de este proyecto increíble y las tecnologías que usaste para
-                                construirlo.</p>
-                            <a href="#" class="btn btn-small">Ver en GitHub</a>
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <h3>Ingeniería en Sistemas de Información</h3>
+                                    <span class="edu-institution">UTN – Facultad Regional Concepción del Uruguay</span>
+                                </div>
+                                <span class="edu-badge edu-badge-current">En curso</span>
+                            </div>
+                            <p class="edu-period">📅 2021 – Presente · Cursando 4° año y materias de 5°</p>
+                            <p class="edu-desc">Formación integral en desarrollo de software, arquitectura de sistemas,
+                                bases de datos, redes y gestión de proyectos. Pendiente de aprobación del proyecto
+                                integrador para obtener el título intermedio de Analista en Sistemas.</p>
+                            <div class="edu-highlights">
+                                <span class="edu-pill">Algoritmos</span>
+                                <span class="edu-pill">Bases de Datos</span>
+                                <span class="edu-pill">Redes</span>
+                                <span class="edu-pill">Ing. de Software</span>
+                                <span class="edu-pill">Sistemas Operativos</span>
+                            </div>
                         </div>
-                    </article>
-                    <!-- Proyecto 2 -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <span>Imagen del Proyecto</span>
+                    </div>
+
+                    <!-- Item 2: Cursos Online -->
+                    <div class="edu-item scroll-animate">
+                        <div class="edu-icon-col">
+                            <div class="edu-icon">💻</div>
+                            <div class="edu-line"></div>
                         </div>
-                        <div class="project-info">
-                            <h3>Proyecto Dos</h3>
-                            <p>Descripción breve de este proyecto increíble y las tecnologías que usaste para
-                                construirlo.</p>
-                            <a href="#" class="btn btn-small">Ver en GitHub</a>
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <h3>Desarrollo Web & IA Aplicada</h3>
+                                    <span class="edu-institution">Autoformación · Udemy, YouTube, Documentación
+                                        oficial</span>
+                                </div>
+                                <span class="edu-badge edu-badge-done">Completado</span>
+                            </div>
+                            <p class="edu-period">📅 2023 – Presente</p>
+                            <p class="edu-desc">Aprendizaje autodidacta en tecnologías modernas: desarrollo frontend,
+                                automatización de flujos con N8N, implementación de LLMs locales con Ollama, integración
+                                con Langchain y bases de datos vectoriales como Pinecone.</p>
+                            <div class="edu-highlights">
+                                <span class="edu-pill">N8N</span>
+                                <span class="edu-pill">Ollama</span>
+                                <span class="edu-pill">Langchain</span>
+                                <span class="edu-pill">Python</span>
+                                <span class="edu-pill">Docker</span>
+                            </div>
                         </div>
-                    </article>
+                    </div>
+
+                    <!-- Item 3: Escuela Secundaria -->
+                    <div class="edu-item scroll-animate">
+                        <div class="edu-icon-col">
+                            <div class="edu-icon">📚</div>
+                        </div>
+                        <div class="edu-card">
+                            <div class="edu-card-header">
+                                <div>
+                                    <h3>Bachiller en Economía y Administración</h3>
+                                    <span class="edu-institution">Escuela Secundaria</span>
+                                </div>
+                                <span class="edu-badge edu-badge-done">Completado</span>
+                            </div>
+                            <p class="edu-period">📅 2015 – 2020</p>
+                            <p class="edu-desc">Formación secundaria con orientación en economía y administración,
+                                desarrollando habilidades analíticas y de gestión.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

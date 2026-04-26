@@ -27,46 +27,53 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     });
 
-    // ---- Slider Logic ----
-    const sliderWrapper = document.getElementById('edu-slider');
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prev-slide');
-    const nextBtn = document.getElementById('next-slide');
-    const dots = document.querySelectorAll('.dot');
+    // ---- Projects Slider Logic ----
+    const projSliderWrapper = document.getElementById('proj-slider');
+    const projSlides = projSliderWrapper ? projSliderWrapper.querySelectorAll('.slide') : [];
+    const projPrevBtn = document.getElementById('proj-prev');
+    const projNextBtn = document.getElementById('proj-next');
+    const projDots = document.querySelectorAll('#proj-dots .dot');
 
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+    let currentProjSlide = 0;
+    const totalProjSlides = projSlides.length;
 
-    function updateSlider() {
-        // Move the wrapper
-        sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-        // Update dots
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentSlide].classList.add('active');
+    function updateProjSlider() {
+        projSliderWrapper.style.transform = `translateX(-${currentProjSlide * 100}%)`;
+        projDots.forEach(dot => dot.classList.remove('active'));
+        if (projDots[currentProjSlide]) projDots[currentProjSlide].classList.add('active');
     }
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
+    function nextProjSlide() {
+        currentProjSlide = (currentProjSlide + 1) % totalProjSlides;
+        updateProjSlider();
     }
 
-    function previousSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
+    function prevProjSlide() {
+        currentProjSlide = (currentProjSlide - 1 + totalProjSlides) % totalProjSlides;
+        updateProjSlider();
     }
 
-    // Event Listeners for Buttons
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', previousSlide);
+    if (projPrevBtn && projNextBtn) {
+        projNextBtn.addEventListener('click', nextProjSlide);
+        projPrevBtn.addEventListener('click', prevProjSlide);
+    }
 
-    // Event Listeners for Dots
-    dots.forEach((dot, index) => {
+    projDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateSlider();
+            currentProjSlide = index;
+            updateProjSlider();
         });
     });
+
+    // Auto-advance projects slider every 6 seconds
+    let projAutoPlay = setInterval(nextProjSlide, 6000);
+    const projSliderContainer = document.querySelector('.projects-slider-container');
+    if (projSliderContainer) {
+        projSliderContainer.addEventListener('mouseenter', () => clearInterval(projAutoPlay));
+        projSliderContainer.addEventListener('mouseleave', () => {
+            projAutoPlay = setInterval(nextProjSlide, 6000);
+        });
+    }
 
     // ---- Scroll Animations ----
     const observerOptions = {
