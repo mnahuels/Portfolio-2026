@@ -721,6 +721,57 @@ body.dark-mode .modal-content {
     transform: translateY(0);
 }
 
+/* ---- Separador con muñeco corriendo ---- */
+.char-divider-wrap {
+    position: relative;
+    background: var(--bg-light);
+    padding: 64px 0 0 0;
+    /* suficiente espacio para el muñeco encima de la barra */
+    overflow: hidden;
+}
+
+.char-divider-bar {
+    position: relative;
+    height: 4px;
+    width: 0%;
+    background: var(--primary-color);
+    border-radius: 0 999px 999px 0;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    transition: width 5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.char-divider-bar.visible {
+    width: 100%;
+}
+
+/* El muñeco flota en el extremo derecho de la barra */
+.char-divider-img {
+    position: absolute;
+    right: -24px;
+    bottom: 4px;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(99, 102, 241, 0.35));
+}
+
+/* Cuando la barra termina (5s), el muñeco desaparece con fade */
+.char-divider-bar.visible .char-divider-img {
+    animation: char-fade-out 0.6s ease 5s forwards;
+}
+
+@keyframes char-fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
 /* ===========================
    RESPONSIVE PARA CELULAR
    =========================== */
